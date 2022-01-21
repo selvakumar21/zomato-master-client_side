@@ -17,14 +17,14 @@ function FoodItem(props) {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        props && dispatch(getFood(props._id)).then((data) => {
+            dispatch(getFood(props._id)).then((data) => {
             setFood(data.payload.foods);
             dispatch(getImage(data.payload.foods.photos)).then((data) => {
                 const {images} = data.payload;
                 images.length && setFood((prev) => ({...prev, image: images[0].location }))
-            
-                return data.payload.foods;
             })
+            return data.payload.foods;
+            
         }).then((data) => {
             reduxState.forEach((each) => {
                 if(each._id === data._id) {
@@ -45,8 +45,8 @@ function FoodItem(props) {
                 {food?.name && (
                     <div className='flex items-start gap-4 w-full p-1'>
                         {food?.image && (
-                            <div className='w-3/2 w-24 h-24 md:h-28 md:w-28 lg:h-36 lg:w-36 rounded-sm overflow-hidden'>
-                                <img src={food?.image} alt='fooditem' className='w-full h-full rounded-lg object-cover object-center'/>
+                            <div className='w-3/2 w-24 h-24 md:h-28 md:w-28 lg:h-36 lg:w-36 rounded-md overflow-hidden'>
+                                <img src={food?.image} alt='fooditem' className='w-full h-full object-cover object-center'/>
                             </div>
                         )}
                    
@@ -56,7 +56,7 @@ function FoodItem(props) {
                                     {food?.name}
                                 </h3>
                                 <button onClick={addFoodToCart} disabled={food?.isAddedToCart} className='md:hidden flex items-center gap-2 text-zomato-400 bg-zomato-50 border border-zomato-400 px-2 py-1 rounded-lg'>
-                                    {food?.isAddedToCart? ("Added"): (<><AiOutlinePlus/> Add</>)}
+                                    {food.isAddedToCart? ("Added"): (<><AiOutlinePlus/> Add</>)}
                                 </button>
                             </div>
                             <ReactStars count={5} value={props?.rating}/>
@@ -74,7 +74,7 @@ function FoodItem(props) {
                 )}
             </div>
         </>
-    )
+    );
 }
 
-export default FoodItem
+export default FoodItem;

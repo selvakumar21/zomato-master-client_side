@@ -32,14 +32,14 @@ function MobileNav({SignUp, SignIn}){
                         <img src='https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png' alt='' className='w-full h-full rounded-full object-cover' />
                     </div>
                     {isDropDownOpen &&(
-                        <div className='absolute shadow-lg py-3 bottom-20 -right-4 w-full bg-white z-20 flex flex-col gap-2'>
+                        <div className='absolute shadow-lg py-3 -bottom-20 -right-4 w-full bg-white z-20 flex flex-col gap-2'>
                             <button onClick={() => dispatch(signOut())}>Sign Out</button>
                             </div> 
                     )}
                     </>
                 ) : (
                     <>
-                        <span onClick={()=>setIsDropDownOpen((prev) => !prev)}>
+                        <span onClick={()=>setIsDropDownOpen((prev) => !prev)} className='border p-2 border-gray-300 text-zomato-400 rounded-full'>
                             <FaUserAlt className='w-full h-full'/>
                         </span>
                         {isDropDownOpen &&(

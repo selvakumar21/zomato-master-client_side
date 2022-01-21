@@ -54,7 +54,7 @@ function Tabs() {
     ]
     return (
         <>
-            <div className='flex relative items-center pb-4 gap-8 md:gap-20 lg:overflow-auto border-b-2'>
+            <div className='flex relative items-center pb-4 gap-8 md:gap-20 overflow-x-scroll lg:overflow-auto border-b-2'>
                 {tabs.map((tab, index) =>(
                     <Tab {...tab} key={index} />
                 ))}

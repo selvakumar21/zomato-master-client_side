@@ -4,15 +4,15 @@ import classnames from 'classnames';
 function MenuCategory(props) {
     return (
         <>
-         <div className={classnames(
+         <div className={classnames("py-2 px-1",
              {
-                 "text-zomato-400 py-2 px-1 bg-zomato-50 border-r-4 border-zomato-400": props.isActive
+                 "text-zomato-400 bg-zomato-50 border-r-4 border-zomato-400": props.isActive
              }
          )}>
              <h3 id={props.name} onClick={props.onClickHandler}>{props.name} ({props.items.length}) </h3>
              </div>   
         </>
-    )
+    );
 }
 
-export default MenuCategory
+export default MenuCategory;

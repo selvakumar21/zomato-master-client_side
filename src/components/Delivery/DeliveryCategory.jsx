@@ -3,7 +3,7 @@ import React from 'react'
 function DeliverySmCard({image, title}) {
     return (
         <>
-            <div className="lg:hidden bg-white shadow rounded-md w-24 h-52 md:w-56">
+            <div className="lg:hidden bg-white shadow rounded-md w-24 md:w-56">
                 <div className='w-full h-24'>
                     <img src={image} alt={title} className='w-full h-full object-cover object-center rounded-t-md'/>
                 </div>

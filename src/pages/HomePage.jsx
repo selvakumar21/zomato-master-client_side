@@ -21,7 +21,7 @@ function HomePage() {
 
     return (
         <>
-        <div className='my-10'>
+        <div className='my-5'>
             {type === 'delivery' && <Delivery />}
             {type === 'dining' && <Dining/>} 
             {type === 'night' && <NightLife/>}

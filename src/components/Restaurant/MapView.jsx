@@ -15,7 +15,7 @@ function MapView(props) {
                     <div className='w-full h-48'>
                     <MapContainer center={props.mapLocation} zoom={13} scrollWheelZoom={false}>
   <TileLayer
-    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap </a> contributors'
     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
   />
   <Marker position={props.mapLocation}>
@@ -27,7 +27,7 @@ function MapView(props) {
                     </div>
                     </div>
                     <div className='flex items-center gap-3'>
-                        <button className='felx items-centergap-2 py-2 px-3 text-gray-700 border-gray-400 rounded-lg'>
+                        <button className='flex items-center gap-2 py-2 px-3 text-gray-700 border border-gray-400 rounded-lg'>
                             <MdContentCopy/> Copy
                         </button>
                         <button className='flex items-center gap-2 px-3 py-2 text-gray-700 border border-gray-400 rounded-lg'>

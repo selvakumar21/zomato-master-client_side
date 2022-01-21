@@ -15,7 +15,7 @@ function PictureCarouselCard(props) {
                         {props.title}
                     </h4>
                     <h6 className='z-10 flex items-center'>
-                        {props.places} Places <IoMdArrowDropright/>
+                        {props.places} <IoMdArrowDropright/>
                     </h6>
                 </div>
         </div>

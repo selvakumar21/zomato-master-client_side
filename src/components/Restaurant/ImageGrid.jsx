@@ -7,7 +7,7 @@ function ImageGrid(props) {
             <div className='w-full h-60 md:hidden'>
                 <img src={props.images.length && props.images[0].location} alt='restaurant' className='w-full h-full object-cover object-center rounded-lg'/>
                 </div>   
-                <div className='w-full h-96 md:flex gap-1'>
+                <div className='hidden w-full h-96 md:flex gap-1'>
                     <div className='w-full h-full overflow-hidden rounded-lg'>
 
                         <img src={props.images.length && props.images[0].location} alt='restaurant' className='w-full h-full object-cover object-center transform transition duration-700 hover:scale-110'/>

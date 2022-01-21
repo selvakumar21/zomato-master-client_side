@@ -4,7 +4,7 @@ import axios from "axios";
 import { SIGN_IN, SIGN_UP, GOOGLE_AUTH, SIGN_OUT } from "./auth.type";
 
 //redux actions
-import {getSelf, clearUser} from "../user/user.action"; 
+import {clearUser} from "../user/user.action"; 
 
 export const signIn = (userData) => async(dispatch) => {
     try{
@@ -14,10 +14,10 @@ export const signIn = (userData) => async(dispatch) => {
             data: {credentials: userData},
         });
         
-        window.location.reload();
-
         localStorage.setItem("zomatoUser", JSON.stringify({token: User.data.token})
         );
+
+        window.location.reload();
 
         return dispatch ({type: SIGN_IN , payload: User.data})
     }catch(error){
@@ -33,10 +33,12 @@ export const signUp = (userData) => async(dispatch) => {
             data: {credentials: userData},
         });
         
-        window.location.reload();
+       
         
         localStorage.setItem("zomatoUser", JSON.stringify({token: User.data.token})
         );
+
+        window.location.reload();
 
         return dispatch ({type: SIGN_UP , payload: User.data})
     }catch(error){

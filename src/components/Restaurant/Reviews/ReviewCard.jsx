@@ -7,7 +7,7 @@ import {useDispatch} from "react-redux";
 import {getUser} from "../../../redux/reducer/user/user.action";
 
 function ReviewCard(props) {
-    const [user, setUser] = useState("");
+    const [user, setUser] = useState("Selva");
 
     const dispatch = useDispatch();
 
@@ -25,7 +25,7 @@ function ReviewCard(props) {
              <div className='flex items-center justify-between'>
                  <div className='flex item-center gap-2'>
                      <div className='w-10 h-10 rounded-full'>
-                         <img src='' alt='avatar' className='w-full h-full rounded-full object-cover'/>
+                         <img src='https://b.zmtcdn.com/data/pictures/chains/3/307893/ac9e6b3236967e1e255e14e24cc0c9e7.jpg' alt='avatar' className='w-full h-full rounded-full object-cover'/>
                      </div>
                      <div className='flex flex-col'>
                          <h3 className='text-lg font-semibold'>{user}</h3>
@@ -38,14 +38,14 @@ function ReviewCard(props) {
              </div>
              <div className='flex flex-col gap-3'>
                  <div className='flex items-center gap-3'>
-                     <span className='text-white text-xl bg-green-700 px-2 py-1 rounded-lg items-center gap-1'>
-                         props.rating <TiStarFullOutline/>
+                     <span className='text-white text-xs bg-green-700 px-2 py-1 rounded-lg flex items-center gap-1'>
+                         {props.rating} <TiStarFullOutline/>
                      </span>
                      <h5 className='font-regular uppercase'>
                          {props.isRestaurantReview ? "Dining" : "Delivery"}
                      </h5>
                      <small className='text-gray-500'>
-                         {dayjs(props.createdAt).format("DD MM YYY")}
+                         {dayjs(props.createdAt).format("DD-MM-YYYY")}
                      </small>
                  </div>
                  <div className='w-full'>

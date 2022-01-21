@@ -16,6 +16,7 @@ function RestaurantCard(props) {
 
     useEffect(() => {
         props.photos && dispatch(getImage(props.photos)).then((data) => {
+            console.log(data.payload)
             const images = data.payload.images;
             setImage((prev) => ({ ...prev, images }))
         });

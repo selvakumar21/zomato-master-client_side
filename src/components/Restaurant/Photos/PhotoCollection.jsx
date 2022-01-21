@@ -16,7 +16,7 @@ const openImage = () => {
              </div>
              </div>   
         </>
-    )
+    );
 }
 
-export default PhotoCollection
+export default PhotoCollection;

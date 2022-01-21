@@ -1,4 +1,4 @@
-import { GET_FOOD_LIST, GET_FOOD } from "./food.type";
+import { GET_FOOD_LIST } from "./food.type";
 
 const initialState = {
     foodList: [],

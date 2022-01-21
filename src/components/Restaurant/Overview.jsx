@@ -21,9 +21,6 @@ function Overview() {
     
     const [menuImages, setMenuImages] = useState({images:[]});
     const [reviews, setReviews] = useState([]);
-    const [cuisine, setCuisine] = useState(["Modern Indian"," Bar Food"]);
-    const averageCost =200;
-
     const {id} = useParams();
 
     const reduxState = useSelector(
@@ -76,7 +73,7 @@ function Overview() {
     
     return (
         <>
-         <div className='flex flex-col md:flex-row relative'>
+         <div className='flex flex-col gap-5 md:flex-row relative'>
              <div className='w-full md:w-8/12'>
                  <h2 className='font-semibold text-lg md:text-xl my-4'>
                      About this place
@@ -90,7 +87,7 @@ function Overview() {
                      </Link>
                  </div>
                  <div className='flex flex-wrap gap-3 my-4'>
-                     <MenuCollection menuTitle='Menu' pages='3' image={menuImages.images} /> 
+                     <MenuCollection menuTitle='Menu' pages={menuImages.length} image={menuImages} /> 
                  </div>
                  <h4 className='text-lg font-medium my-4'>Cuisine</h4>
                  <div className='flex flex-wrap gap-2'>
@@ -101,23 +98,14 @@ function Overview() {
                      ))}
                  </div>
                  <div className='my-4'>
-                 <h4 className='text-lg font-medium my-4'>Average Cost</h4>
+                 <h4 className='text-lg font-medium'>Average Cost</h4>
                  <h6>${reduxState?.averageCost} for one order (approx.)</h6>
                  <small className='text-gray-500'>
                      Exclusive of applicable taxes and charges, if any
                  </small>
                  </div>
-                 <div className='my-4'>
-                 <h4 className='text-lg font-medium my-4'>Similar Restaurants</h4>
-                 <div>
-                     <Slider {...settings}>
-                         <MenuSimilarRestaurantCard image='https://b.zmtcdn.com/data/pictures/chains/3/307893/69f1fa33c357f755f7021b7e35d59380.jpg' title='non-veg meal'/>
-                         <MenuSimilarRestaurantCard image='https://b.zmtcdn.com/data/pictures/chains/3/307893/69f1fa33c357f755f7021b7e35d59380.jpg' title='non-veg meal'/>
-                         <MenuSimilarRestaurantCard image='https://b.zmtcdn.com/data/pictures/chains/3/307893/69f1fa33c357f755f7021b7e35d59380.jpg' title='non-veg meal'/>
-                         <MenuSimilarRestaurantCard image='https://b.zmtcdn.com/data/pictures/chains/3/307893/69f1fa33c357f755f7021b7e35d59380.jpg' title='non-veg meal'/>
-                     </Slider>
-                 </div>
-                 </div>
+
+                 <div className='flex flex-col-reverse'>
                  <div className='my-4'>
                      <h4 className='text-lg font-medium'>Rate your delivery experience</h4>
                      <ReactStars count={5} onChange={ratingChanged} size={24} activeColor='#ffd700'/>
@@ -125,12 +113,27 @@ function Overview() {
                         <ReviewCard {...review} key={index}/>
                      ))}        
                  </div>
+                 <div className='my-4'>
+                 <h4 className='text-lg font-medium'>Similar Restaurants</h4>
+                 <div>
+                     <Slider {...settings}>
+                         <MenuSimilarRestaurantCard image='https://b.zmtcdn.com/data/pictures/chains/3/307893/69f1fa33c357f755f7021b7e35d59380.jpg' title='non-veg meal'/>
+                         <MenuSimilarRestaurantCard image='https://b.zmtcdn.com/data/pictures/chains/3/307893/69f1fa33c357f755f7021b7e35d59380.jpg' title='non-veg meal'/>
+                         <MenuSimilarRestaurantCard image='https://b.zmtcdn.com/data/pictures/chains/3/307893/69f1fa33c357f755f7021b7e35d59380.jpg' title='non-veg meal'/>
+                         <MenuSimilarRestaurantCard image='https://b.zmtcdn.com/data/pictures/chains/3/307893/69f1fa33c357f755f7021b7e35d59380.jpg' title='non-veg meal'/>
+                         <MenuSimilarRestaurantCard image='https://b.zmtcdn.com/data/pictures/chains/3/307893/69f1fa33c357f755f7021b7e35d59380.jpg' title='non-veg meal'/>
+                         <MenuSimilarRestaurantCard image='https://b.zmtcdn.com/data/pictures/chains/3/307893/69f1fa33c357f755f7021b7e35d59380.jpg' title='non-veg meal'/>
+                     </Slider>
+                 </div>
+                 </div>
+                
                  <div className='my-4 w-full md:hidden flex flex-col gap-4'>
-                     <MapView title="MxDonald's" phno='+919843234534' mapLocation={getLatLong("11.019651713031031, 76.99040235927608")} address='474, Opposite Teak Homes, Avinashi Road, Peelamedu, Coimbatore'/>
+                     <MapView title="McDonald's" phno='+919843234534' mapLocation={getLatLong("11.019651713031031, 76.99040235927608")} address='474, Opposite Teak Homes, Avinashi Road, Peelamedu, Coimbatore'/>
                  </div>
             </div>
-            <aside style={{height:"fit-content"}} className='hidden md:flex w-4/12 sticky rounded-xl top-2 bg-white p-3 shadow-md flex-col gap-4'>
-                <MapView title="MxDonald's" phno='+919843234534' mapLocation={getLatLong("11.019651713031031, 76.99040235927608")} address='474, Opposite Teak Homes, Avinashi Road, Peelamedu, Coimbatore'/>
+            </div>
+            <aside style={{height:"fit-content"}} className='hidden md:flex w-4/12 sticky rounded-xl top-10 bg-white p-3 shadow-md flex-col gap-4'>
+                <MapView title="McDonald's" phno='+919843234534' mapLocation={getLatLong("11.019651713031031, 76.99040235927608")} address='474, Opposite Teak Homes, Avinashi Road, Peelamedu, Coimbatore'/>
             </aside>
             </div>   
         </>

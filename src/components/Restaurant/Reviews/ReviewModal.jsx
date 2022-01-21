@@ -26,7 +26,7 @@ const handleChange = (e) =>{
     setReviewData((prev) => ({ ...prev, [e.target.id]: e.target.value }));
 };
 
-const handleRating = rating =>{
+const handleRating = (rating) =>{
     setReviewData((prev) =>({ ...prev, rating}));
 };
 
@@ -126,8 +126,6 @@ const toggleDelivery = () =>{
                         </div>
                     </div>
                     <Rating count={5} size={24} value={reviewData.rating} onChange={handleRating} />
-                </div>
-
                 <form className='flex flex-col gap-4'>
                     <div className='w-full flex flex-col gap-2'>
                         <label htmlFor='subject'>
@@ -136,12 +134,13 @@ const toggleDelivery = () =>{
                         <input type='text' id='subject' placeholder='amazing food' value={reviewData.subject} onChange={handleChange} className='w-full border border-gray-400 px-3 py-2 rounded-lg focus:outline-none focus:border-zomato-400'/>
                     </div>
                     <div className='w-full flex flex-col gap-2'>
-                        <label htmlFor='subject'>
-                            Subject
+                        <label htmlFor='reviewText'>
+                            Review Text
                         </label>
                         <textarea rows='5' id='reviewText' placeholder='Type your review' value={reviewData.reviewText} onChange={handleChange} className='w-full border border-gray-400 px-3 py-2 rounded-lg focus:outline-none focus:border-zomato-400'/>
                     </div>
                 </form>
+                </div>
 
                 <div className="mt-4">
                   <button

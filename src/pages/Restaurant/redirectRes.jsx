@@ -4,10 +4,10 @@ import {useHistory, useParams} from "react-router-dom"
 function RedirectRes() {
 
     const history = useHistory();
-    const {_id} = useParams();
+    const {id} = useParams();
 
     useEffect(() => {
-        history.push(`/restaurant/${_id}/overview`);
+        history.push(`/restaurant/${id}/overview`);
     });
 
     return (

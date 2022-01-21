@@ -1,9 +1,10 @@
 import React, {useEffect} from 'react';
-import {useParams} from "react-router-dom";
+import {useParams, useHistory} from "react-router-dom";
 
 //redux 
 import { useDispatch } from 'react-redux';
 import { googleAuth } from '../redux/reducer/auth/auth.action';
+
 
 const GoogleAuth = () => {
     const {token} = useParams();

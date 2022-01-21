@@ -39,7 +39,7 @@ function OrderOnline() {
     return (
         <>
             <div className='w-full h-screen flex'>
-                <aside className='hidden md:flex flex-col gap-3 border-r overflow-y-scroll border-gray-200 h-screen w-1/4'>
+                <aside className='hidden md:flex flex-col gap-1 border-r overflow-y-scroll border-gray-200 h-screen w-1/4'>
                     {menu.map((item, index) =>(
                         <MenuListContainer {...item} key={index} OnClickHandler={OnClickHandler} selected={selected}/>
                      ))}
@@ -60,7 +60,11 @@ function OrderOnline() {
                     </section>
                 </div>
             </div>
-            <FloatMenuBtn />
+            <FloatMenuBtn
+                menu={menu}
+                OnClickHandler={OnClickHandler}
+                selected={selected}
+            />
         </>
     )
 }

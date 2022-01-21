@@ -37,9 +37,9 @@ const {type} = useParams();
         <>
         <div className = 'lg:hidden bg-white shadow-lg fixed bottom-0 z-10 w-full flex items-center justify-between md:justify-evenly text-gray-500 border'>
             {allTypes.map((item) => (
-                <Link key={item.id} to={`/${item.id}`} className='w-1/4'>
+                <Link key={item.id} to={`${item.id}`} className='w-1/4'>
                     <div className={
-                        type=== item.id ? "flex flex-col relative text-center text-xl text-zomato-400" : "flex flex-col text-center items-center text-xl"
+                        type=== item.id ? "flex flex-col relative text-center items-center text-xl text-zomato-400" : "flex flex-col text-center items-center text-xl"
                         }
                     >
                          <div className=
@@ -111,7 +111,7 @@ const LargeTabs = () => {
                              "border-b-2 border-zomato-400":type === item.id,
                          }
                      )}>
-                         <div className={classnames("w-16 h-16 bg-gray-100 p-4 rounded-full flex gap-3",
+                         <div className={classnames("w-16 h-16 bg-gray-100 p-4 rounded-full",
                          {
                              [`bg-${item.activeColor}-100`]:type ===item.id
                          }
@@ -123,7 +123,7 @@ const LargeTabs = () => {
                              className='w-full h-full' />   
                          </div>
                          <h3 className={
-                                 type === item.id ? "text-xl text-zomato-400":"text-xl text-gray-700"         
+                                 type === item.id ? "text-md text-zomato-400":"text-md text-gray-700"         
                              }>
                                  {item.name}
                              </h3>

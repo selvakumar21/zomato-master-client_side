@@ -29,16 +29,13 @@ function RestaurantLayout({children}) {
         restaurantRating:'4.5',
         deliveryRating:"3.2"
     })
-    
-    const [images, setImages] = useState([
-        
-    ])
+  
 
-    const {_id} = useParams();
+    const {id} = useParams();
     const dispatch = useDispatch();
     
     useEffect(()=>{
-        dispatch(getSpecificRestaurant(_id)).then((data) =>{
+        dispatch(getSpecificRestaurant(id)).then((data) =>{
             setRestaurant((prev) =>({
                 ...prev, ...data.payload.restaurant,
             }));
@@ -64,8 +61,8 @@ function RestaurantLayout({children}) {
         cuisine={restaurant?.cuisine}
         address={restaurant?.address}
         />
-             <div className='my-4 flex flex-wrap gap-3'>
-             <InfoButton isActive>
+             <div className='my-4 flex flex-wrap gap-3 mx-auto'>
+             <InfoButton isActive={true}>
                     <TiStarOutline/> Add Review
                  </InfoButton>
                  <InfoButton >

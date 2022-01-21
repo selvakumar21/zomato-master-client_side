@@ -107,6 +107,6 @@ export default function SignIn({isOpen, setIsOpen}) {
         </Dialog>
       </Transition>
     </>
-  )
+  );
 }
 
