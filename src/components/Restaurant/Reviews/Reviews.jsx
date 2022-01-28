@@ -18,7 +18,7 @@ function Reviews() {
     const reduxState = useSelector((globalState) => globalState.restaurant.selectedRestaurant.restaurant);
 
     useEffect(() => {
-        reduxState && dispatch(getReview(reduxState._id)).then((data) => {
+        reduxState && dispatch(getReview(reduxState?._id)).then((data) => {
             setReviews(data.payload.reviews);
         })
     }, [reduxState])

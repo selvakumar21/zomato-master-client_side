@@ -33,7 +33,7 @@ useEffect(() => {
 
     return (
         <>
-         {isMenuOpen && (<ImageViewer src={photos} currentIndex={currentImage} disableScroll={true} onClose={closeViewer}/> )}
+         {isMenuOpen && (<ImageViewer src={photos} currentIndex={currentImage} disableScroll={false} onClose={closeViewer}/> )}
 
          <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2'>
              {photos.map((photo, index) => (

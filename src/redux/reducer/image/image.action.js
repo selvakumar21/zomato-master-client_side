@@ -5,7 +5,7 @@ import { GET_IMAGE } from "./image.type";
 
 export const getImage = (_id) => async (dispatch) => {
     try{
-        const image = axios({
+        const image = await axios({
             method:"GET",
             url:`htpp://localhost:5000/image/${_id}`,
         });
