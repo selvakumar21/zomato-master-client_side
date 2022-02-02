@@ -37,25 +37,28 @@ function RestaurantLayout({children}) {
     useEffect(()=>{
         dispatch(getSpecificRestaurant(id)).then((data) =>{
             setRestaurant((prev) =>({
-                ...prev, ...data.payload.restaurant,
+                ...prev, 
+                ...data.payload.restaurant,
             }));
 
-            dispatch(getImage(data.payload.restaurant.photos)).then((data) => {
+            dispatch(getImage
+                (data.payload.restaurant.photos)).then((data) => {
+                console.log(data);
                 setRestaurant((prev)=> ({
                     ...prev,
-                    images:data.payload.images,
+                    images: data.payload.images,
                 }))
             })
         })
 
             dispatch(getCart());
-    },[])
+    },[]);
 
     return (
         <>
          <Navbar />   
-         <div className='container mx-auto px-4 mt-4 lg:px-20 pb-20'>
-             <ImageGrid images={restaurant.images} />
+         <div className='container mx-auto px-4 mt-8 lg:px-20 pb-20'>
+             <ImageGrid images={restaurant?.images} />
              <RestaurantInfo name={restaurant?.name} restaurantRating={restaurant?.restaurantRating || 0} 
         deliveryRating={restaurant?.deliveryRating || 0}
         cuisine={restaurant?.cuisine}

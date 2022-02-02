@@ -9,7 +9,7 @@ const foodReducer = ( state = initialState, action) => {
         case GET_FOOD_LIST:
             return{
                 ...state,
-                foodList: action.payload,
+                foodList : action.payload,
             }
         default: 
             return {

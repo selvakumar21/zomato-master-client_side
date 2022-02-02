@@ -20,7 +20,7 @@ export const getSpecificRestaurant = (_id) => async (dispatch) => {
     try{
         const restaurant = await axios({
             method:'GET',
-            url: `http://localhost:5000/restaurant/?city=NCR/${_id}`,
+            url: `http://localhost:5000/restaurant/${_id}`,
         })
 
         return dispatch({

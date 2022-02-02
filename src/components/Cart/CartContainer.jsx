@@ -62,7 +62,6 @@ function CartContainer() {
     const [isOpen, setIsOpen] = useState(false);
 
     const reduxState = useSelector((globalState) => globalState.cart.cart);
-
     const toggleCart = () => setIsOpen((prev) => !prev);
     const closeCart = () => setIsOpen(false)
 
@@ -71,7 +70,8 @@ function CartContainer() {
        <>
        {reduxState.length && (
             <>
-            {isOpen && (
+                <>
+                {isOpen && (
                 <div className='fixed w-full overflow-y-scroll h-48 bg-white z-10 p-2 bottom-14 px-3'>
                     <div className='flex items-center justify-between md:px-20'>
                         <h3 className='text-xl font-semibold'>
@@ -94,8 +94,9 @@ function CartContainer() {
                 <CartLG toggle={toggleCart} />
             </div>
         </>
+    </> 
        )}
-       </>
+    </>
     )
 }
 

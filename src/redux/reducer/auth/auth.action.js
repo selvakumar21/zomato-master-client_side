@@ -4,7 +4,7 @@ import axios from "axios";
 import { SIGN_IN, SIGN_UP, GOOGLE_AUTH, SIGN_OUT } from "./auth.type";
 
 //redux actions
-import {clearUser} from "../user/user.action"; 
+import {clearUser, getSelf} from "../user/user.action"; 
 
 export const signIn = (userData) => async(dispatch) => {
     try{
@@ -32,9 +32,7 @@ export const signUp = (userData) => async(dispatch) => {
             url: `http://localhost:5000/auth/signup`,
             data: {credentials: userData},
         });
-        
-       
-        
+
         localStorage.setItem("zomatoUser", JSON.stringify({token: User.data.token})
         );
 
@@ -62,8 +60,7 @@ export const signOut = () => async (dispatch) => {
 export const googleAuth = (token) => async(dispatch) => {
     try{
         localStorage.setItem("zomatoUser" , JSON.stringify({ token }))
-     
-        
+
         return dispatch ({type: GOOGLE_AUTH , payload: {} })
     }catch(error){
         return dispatch({ type: "ERROR", payload: error})

@@ -4,7 +4,7 @@ const initialState = {
     cart: [],
 }
 
-const CartReducer = () => (state = initialState, action) => {
+const CartReducer = (state = initialState, action) => {
     switch(action.type) {
         case ADD_TO_CART:
             return {

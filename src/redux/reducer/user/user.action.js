@@ -6,13 +6,13 @@ import { GET_USER, SELF, CLEAR_USER } from "./user.type";
 export const getUser = (_id) => async(dispatch) => {
     try{
         const User = await axios({
-            method: 'GET',
-            url:`http:localhost:5000/user/${_id}`,
+            method: "GET",
+            url:`http://localhost:5000/user/${_id}`,
         })
 
         return dispatch({type: GET_USER, payload: User.data})
     }catch(error){
-        dispatch({type: 'ERROR', payload: error})
+        dispatch({type: "ERROR", payload: error})
     }
 };
 

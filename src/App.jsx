@@ -27,7 +27,6 @@ import Photos from './components/Restaurant/Photos/Photos';
 //redux
 import{useDispatch} from "react-redux";
 import{getSelf} from "./redux/reducer/user/user.action";
-;
 
 function App() {
 

@@ -7,13 +7,15 @@ import {useDispatch} from "react-redux";
 import {getUser} from "../../../redux/reducer/user/user.action";
 
 function ReviewCard(props) {
-    const [user, setUser] = useState("Selva");
+    const [user, setUser] = useState("Aditya Gusain");
+    // console.log(props);
 
     const dispatch = useDispatch();
 
     useEffect(() => {
         if(props){    
-        dispatch(getUser(props.user)).then((data) => {
+        dispatch(getUser
+            (props.user)).then((data) => {
             setUser(data.payload.user.fullName);
         })
         }

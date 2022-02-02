@@ -10,9 +10,9 @@ export const getFood = (foodId) => async (dispatch) => {
             url: `http://localhost:5000/food/${foodId}`,
         })
 
-        dispatch({ type: GET_FOOD, payload: Food.data})
+        return dispatch({ type: GET_FOOD, payload: Food.data})
     }catch(error){
-        dispatch({type: "ERROR", payload: error})
+        return dispatch({type: "ERROR", payload: error})
     }
 }
 
@@ -24,8 +24,8 @@ export const getFoodList = (menuId) => async (dispatch) => {
             url: `http://localhost:5000/menu/list/${menuId}`,
         })
 
-        dispatch({ type: GET_FOOD_LIST, payload: Menu.data})
+        return dispatch({ type: GET_FOOD_LIST, payload: Menu.data})
     }catch(error){
-        dispatch({type: "ERROR", payload: error})
+        return dispatch({type: "ERROR", payload: error})
     }
 }

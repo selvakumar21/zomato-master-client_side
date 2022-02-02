@@ -21,7 +21,7 @@ function MobileNav({SignUp, SignIn}){
 
     return(
         <div className='flex w-full items-center justify-between lg:hidden'>
-            <div className='w-24'>
+            <div className='w-28'>
                 <img src='https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png' alt='' className='w-full h-full' />
             </div>
             <div className='flex items-center gap-3 relative'>
@@ -29,7 +29,7 @@ function MobileNav({SignUp, SignIn}){
                 {reduxState?.fullName?(
                     <>
                     <div onClick={() => setIsDropDownOpen((prev)=> !prev)} className='border border-gray-300 text-zomato-400 w-20 h-20 rounded-full'>
-                        <img src='https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png' alt='' className='w-full h-full rounded-full object-cover' />
+                        <img src="https://cdn1.vectorstock.com/i/1000x1000/36/15/businessman-character-avatar-isolated-vector-12613615.jpg" alt='' className='w-full h-full rounded-full object-cover' />
                     </div>
                     {isDropDownOpen &&(
                         <div className='absolute shadow-lg py-3 -bottom-20 -right-4 w-full bg-white z-20 flex flex-col gap-2'>
@@ -84,7 +84,7 @@ function LargeNav({SignUp, SignIn}){
                 {reduxState?.fullName? (
                     <div className='relative w-20'>
                         <div onClick={()=>setIsDropDownOpen((prev) => !prev)} className='border border-gray-300 text-zomato-400 w-full h-20 rounded-full'>
-                        <img src='https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png' alt='' className='w-full h-full rounded-full object-cover' />
+                        <img src="https://cdn1.vectorstock.com/i/1000x1000/36/15/businessman-character-avatar-isolated-vector-12613615.jpg" alt='' className='w-full h-full rounded-full object-cover' />
                         </div>
                         {isDropDownOpen &&(
                         <div className='absolute shadow-lg py-3 -bottom-20 -right-4 w-full bg-white z-20 flex flex-col gap-2'>

@@ -28,10 +28,10 @@ function OrderOnline() {
 
     const reduxState = useSelector((globalState) =>
       globalState.restaurant.selectedRestaurant.restaurant
-    );
-
-    useEffect(() => {
-      reduxState && dispatch(getFoodList(reduxState.menu)).then((data) => {
+    );    useEffect(() => {
+      reduxState &&
+       dispatch(getFoodList(reduxState.menu)).then((data) => {
+        //    console.log(data.payload);
         setMenu(data.payload.menus.menus)
       })
     }, [reduxState])
