@@ -7,11 +7,11 @@ import {useSelector} from "react-redux";
 
 function CheckoutNavbar() {
 
-    const reduxState = useSelector((globalState) => globalState.user.user.user);
+    const reduxState = useSelector((globalState) => globalState.user.user);
 
     return (
         <>
-            <nav className='p-4 bg-white shadow-md w-full items-center'>
+            <nav className='p-4 flex bg-white shadow-md w-full items-center'>
                 <div className='container px-4 md:px-20 mx-auto'>
                     <div className='flex items-center justify-between w-full'>
                         <AiOutlineArrowLeft />
@@ -20,9 +20,9 @@ function CheckoutNavbar() {
                         </div>
                         <div className='flex items-center gap-3'>
                             <div className='border border-gray-300 text-zomato-400 w-12 h-12 rounded-full'>
-                                <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.shareicon.net%2Fdata%2F512x512%2F2016%2F08%2F18%2F814068_face_512x512.png&imgrefurl=https%3A%2F%2Fwww.shareicon.net%2Fface-user-character-avatar-harry-potter-814068&tbnid=Nu6BgfjM2-mVSM&vet=12ahUKEwjvjaKpoZv1AhWW6jgGHeeACyMQMygqegUIARCiAg..i&docid=y4nQC-PdIc3YkM&w=512&h=512&q=avatar&hl=en&ved=2ahUKEwjvjaKpoZv1AhWW6jgGHeeACyMQMygqegUIARCiAg" alt={reduxState?.email} className='w-full h-full rounded-full object-cover'/>
+                                <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.shareicon.net%2Fdata%2F512x512%2F2016%2F08%2F18%2F814068_face_512x512.png&imgrefurl=https%3A%2F%2Fwww.shareicon.net%2Fface-user-character-avatar-harry-potter-814068&tbnid=Nu6BgfjM2-mVSM&vet=12ahUKEwjvjaKpoZv1AhWW6jgGHeeACyMQMygqegUIARCiAg..i&docid=y4nQC-PdIc3YkM&w=512&h=512&q=avatar&hl=en&ved=2ahUKEwjvjaKpoZv1AhWW6jgGHeeACyMQMygqegUIARCiAg" alt={reduxState.user?.email} className='w-full h-full rounded-full object-cover'/>
                             </div>
-                            {reduxState?.fullName}
+                            {reduxState.user?.fullName}
                         </div>
                     </div>
                 </div>
