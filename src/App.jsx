@@ -31,7 +31,7 @@ import{getSelf} from "./redux/reducer/user/user.action";
 function App() {
 
   const dispatch = useDispatch();
-
+  
   useEffect(() => {
     dispatch(getSelf());
   },[localStorage])

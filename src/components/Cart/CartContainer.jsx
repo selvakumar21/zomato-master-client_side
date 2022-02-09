@@ -18,7 +18,7 @@ function CartSM({toggle}) {
     <>
         <div className='md:hidden flex items-center justify-between'>
             <div className='flex flex-col items-start'>
-                <small className='flex items-center gap-1' onclick={toggle}>
+                <small className='flex items-center gap-1' onClick={toggle}>
                     {reduxState.length} Item <IoMdArrowDropup/>
                 </small>
                 <h4>
@@ -42,7 +42,7 @@ function CartLG({toggle}) {
     <>
     <div className='hidden md:flex items-center justify-between'>
         <div className='flex flex-col items-start'>
-        <small className='flex items-center gap-1' onclick={toggle}>
+        <small className='flex items-center gap-1' onClick={toggle}>
                 {reduxState.length} Item <IoMdArrowDropup/>
             </small>
             <h4>
@@ -77,7 +77,7 @@ function CartContainer() {
                         <h3 className='text-xl font-semibold'>
                             Your Orders
                         </h3>
-                        <IoCloseSharp onclick={closeCart} />
+                        <IoCloseSharp onClick={closeCart} />
                     </div>
                     <hr className='my-2'/>
                     

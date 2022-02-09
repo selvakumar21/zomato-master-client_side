@@ -14,7 +14,6 @@ import SignIn from '../Auth/SignIn';
 
 function MobileNav({SignUp, SignIn}){
     const [isDropDownOpen, setIsDropDownOpen] = useState(false);
-    // const [user] = useState({});
     const reduxState = useSelector((globalState) => globalState.user.user.user)
 
     const dispatch = useDispatch();
@@ -57,7 +56,6 @@ function MobileNav({SignUp, SignIn}){
 
 function LargeNav({SignUp, SignIn}){
     const [isDropDownOpen, setIsDropDownOpen] = useState(false);
-    // const [user] = useState({});
     const reduxState = useSelector((globalState) => globalState.user.user.user)
     const dispatch = useDispatch();
 

@@ -68,7 +68,7 @@ function CheckoutPage() {
             <h1 className='text-xl text-center md:text-2xl font-bold'>Checkout</h1>
             <div className='w-full md:w-3/5 rounded-lg py-3 shadow-lg bg-white flex flex-col items-center'>
                 <h3 className='text-lg font-semibold'>Summary</h3>
-                <div className='flex w-full felx-col gap-2 items-center'>
+                <div className='flex w-full flex-col gap-2 items-center'>
                     <h5 className='text-base tracking-wider'>ORDER FROM</h5>
                     <div className='flex w-full flex-col items-center text-gray-400'>
                         <h4>Domino's Pizza</h4>

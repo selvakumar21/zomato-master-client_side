@@ -9,8 +9,7 @@ import {postReview} from "../../../redux/reducer/review/review.action";
 
 export default function ReviewModal({isOpen, setIsOpen, ...props}) {
 
-  const dispatch = useDispatch()
-
+  const dispatch = useDispatch();
 
 const [reviewData, setReviewData] = useState({
     subject:"",

@@ -15,8 +15,8 @@ function FoodItem(props) {
     const increment = () => dispatch(IncrementQuantity(props._id));
 
     const decrement = () => {
-        if(props.quantity === 1)
-        return dispatch(DecrementQuantity(props._id));
+        if(props.quantity === 1)return;
+        dispatch(DecrementQuantity(props._id));
     };
 
     return (
