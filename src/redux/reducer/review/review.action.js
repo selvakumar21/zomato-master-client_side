@@ -7,7 +7,7 @@ export const getReview = (resId) => async(dispatch) => {
     try{
         const reviewList = await axios({
             method: "GET",
-            url: `http://localhost:5000/review/${resId}`,
+            url: `https://zomato-master-serverside.herokuapp.com/review/${resId}`,
         });
         
         return dispatch({type: GET_REVIEW, payload: reviewList.data});
@@ -20,7 +20,7 @@ export const postReview = (reviewData) => async(dispatch) => {
     try{
         await axios({
             method: "POST",
-            url: `http://localhost:5000/review/new`,
+            url: `https://zomato-master-serverside.herokuapp.com/review/new`,
             data: {reviewData},
         });
 
