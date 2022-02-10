@@ -39,7 +39,7 @@ export default function SignUp({isOpen, setIsOpen}) {
 
 
   const googleSignUp = () => (
-      window.location.href = "http://localhost:5000/auth/google");
+      window.location.href = "https://zomato-master-serverside.herokuapp.com/auth/google");
 
   return (
     <>
